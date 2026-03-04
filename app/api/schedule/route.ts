@@ -9,7 +9,7 @@ export async function GET() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const rows = await sql`
+  const rows = await sql()`
     SELECT id, schedule_type, schedule_data, preferences, created_at, updated_at
     FROM user_schedules
     WHERE user_email = ${session.user.email}
@@ -41,7 +41,7 @@ export async function DELETE() {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  await sql`
+  await sql()`
     DELETE FROM user_schedules
     WHERE user_email = ${session.user.email}
   `;

@@ -179,9 +179,9 @@ Return ONLY valid JSON (no other text) in this exact format:
     }
 
     // Delete any existing schedule for this user, then insert the new one
-    await sql`DELETE FROM user_schedules WHERE user_email = ${session.user.email}`;
+    await sql()`DELETE FROM user_schedules WHERE user_email = ${session.user.email}`;
 
-    const inserted = await sql`
+    const inserted = await sql()`
       INSERT INTO user_schedules (user_id, user_email, schedule_type, schedule_data, preferences)
       VALUES (
         ${session.user.id || session.user.email},

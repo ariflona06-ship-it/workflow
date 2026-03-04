@@ -17,7 +17,7 @@ export async function PATCH(
     const body = await req.json();
 
     // Update the schedule in the database
-    const updated = await sql`
+    const updated = await sql()`
       UPDATE user_schedules
       SET schedule_data = ${JSON.stringify(body)}, updated_at = NOW()
       WHERE id = ${parseInt(scheduleId)} AND user_email = ${session.user.email}

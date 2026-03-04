@@ -12,7 +12,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'WorkFlow - Plan Your Study Time',
   description: 'Plan your study time without burning out. Connect with Google Classroom and manage your assignments effortlessly.',
-  generator: 'v0.app',
+  generator: "none",
   icons: {
     icon: [
       {
